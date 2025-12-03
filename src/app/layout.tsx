@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Sidebar } from "@/components/layout/sidebar";
-import { BottomNav } from "@/components/layout/bottom-nav";
+import { MobilePlaceholder } from "@/components/layout/mobile-placeholder";
 
 import { ActiveUnitProvider } from "@/context/active-unit-context";
 import "./globals.css";
@@ -32,14 +32,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ActiveUnitProvider>
-          <div className="flex min-h-screen bg-background relative">
-            <Sidebar />
-            <div className="flex-1 flex flex-col lg:pl-[18.5rem] pb-16 lg:pb-0">
-              <main className="flex-1">
-                {children}
-              </main>
+          <MobilePlaceholder />
+          <div className="hidden lg:block">
+            <div className="flex min-h-screen bg-background relative">
+              <Sidebar />
+              <div className="flex-1 flex flex-col lg:pl-[18.5rem]">
+                <main className="flex-1">
+                  {children}
+                </main>
+              </div>
             </div>
-            <BottomNav />
           </div>
         </ActiveUnitProvider>
       </body>

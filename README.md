@@ -2,19 +2,21 @@
 
 A minimalistic English learning web application built with Next.js, Shadcn UI, and Tailwind CSS.
 
+> **Note:** Currently optimized for Desktop use (1024px or wider). Mobile version is under development.
+
 ## Features
 
-- **Dashboard View**: Overview of learning progress.
-- **Activity Charts**: Visual representation of weekly activity.
-- **Flashcards**: Interactive cards for learning words with flip animation.
-- **Minimalistic Design**: Clean, black/white/gray palette.
+- **Learning Path**: Interactive visual learning path with progress tracking across units and lessons
+- **Daily Goals**: Track your daily learning streak and XP progress
+- **Leaderboard**: Compete with other learners and track your ranking
+- **User Profile**: Monitor your overall progress and achievements
+- **Minimalistic Design**: Clean, modern interface with smooth animations
 
 ## Tech Stack
 
 - **Framework**: Next.js (App Router)
 - **UI Library**: Shadcn UI
 - **Styling**: Tailwind CSS
-- **Charts**: Recharts (via Shadcn Chart)
 - **Icons**: Lucide React
 
 ## Getting Started
@@ -29,8 +31,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Structure
 
-- `src/app`: App Router pages and layouts.
-- `src/components/ui`: Shadcn UI components.
-- `src/components/dashboard`: Dashboard specific components (charts, stats).
-- `src/components/learning`: Learning specific components (flashcards).
-
+- `src/app`: App Router pages and layouts
+- `src/components/ui`: Shadcn UI base components
+- `src/components/home`: Learning path and dashboard widgets
+- `src/components/layout`: Sidebar and navigation components
+- `src/components/icons`: Custom SVG icon components
