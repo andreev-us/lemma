@@ -10,7 +10,7 @@ export const UNIT_THEMES = {
     name: "indigo",
     primary: "#6366F1",
     light: "#818cf8",
-    dark: "#4338ca",
+
     classes: {
       bg: "bg-indigo-500",
       bgLight: "bg-indigo-100",
@@ -28,7 +28,7 @@ export const UNIT_THEMES = {
     name: "emerald",
     primary: "#10B981",
     light: "#34D399",
-    dark: "#047857",
+
     classes: {
       bg: "bg-emerald-500",
       bgLight: "bg-emerald-100",
@@ -46,7 +46,7 @@ export const UNIT_THEMES = {
     name: "amber",
     primary: "#D97706",
     light: "#F59E0B",
-    dark: "#B45309",
+
     classes: {
       bg: "bg-amber-500",
       bgLight: "bg-amber-100",
@@ -64,18 +64,18 @@ export const UNIT_THEMES = {
     name: "azure",
     primary: "#2c7fff",
     light: "#6bb0ff",
-    dark: "#0055cc",
+
     classes: {
-      bg: "bg-[#2c7fff]",
-      bgLight: "bg-[#2c7fff]/20",
-      text: "text-[#2c7fff]",
-      border: "border-[#2c7fff]/30",
-      iconBg: "bg-[#2c7fff]/10",
-      iconColor: "text-[#2c7fff]",
-      gradient: "from-[#2c7fff] to-[#0066ff]",
+      bg: "bg-[var(--color-azure)]",
+      bgLight: "bg-[var(--color-azure-bg-light)]",
+      text: "text-[var(--color-azure)]",
+      border: "border-[var(--color-azure-border)]",
+      iconBg: "bg-[var(--color-azure)]/10",
+      iconColor: "text-[var(--color-azure)]",
+      gradient: "from-[var(--color-azure)] to-[#0066ff]",
       borderDark: "border-[#0055cc]",
-      shadow: "shadow-[#2c7fff]/40",
-      glow: "bg-[#2c7fff]/20",
+      shadow: "shadow-[var(--color-azure)]/40",
+      glow: "bg-[var(--color-azure)]/20",
     }
   }
 } as const

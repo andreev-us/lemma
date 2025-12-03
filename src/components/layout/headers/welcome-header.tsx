@@ -6,14 +6,16 @@ import Link from "next/link"
 import { useActiveUnit } from "@/context/active-unit-context"
 import { UNIT_THEMES } from "@/lib/utils"
 
+import { USER_AVATAR } from "@/lib/constants"
+
 export function WelcomeHeader() {
   const { activeTheme } = useActiveUnit()
   const theme = UNIT_THEMES[activeTheme]
 
   return (
-    <div 
+    <div
       className="sticky top-4 z-40 p-6 mb-8 rounded-3xl border-2 border-slate-200 shadow-sm transition-all duration-200 backdrop-blur-md"
-      style={{ 
+      style={{
         background: `linear-gradient(to bottom right, rgba(255,255,255,0.5) 0%, ${theme.primary}10 100%)`
       }}
     >
@@ -22,7 +24,7 @@ export function WelcomeHeader() {
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 text-slate-900">Hi, Ruslan 👋</h1>
           <p className="text-sm md:text-base text-slate-600">Let&apos;s continue your English journey.</p>
         </div>
-        
+
         <div className="flex items-center gap-4 self-end md:self-auto">
           {/* Streak Counter */}
           <Link href="/profile">
@@ -35,7 +37,7 @@ export function WelcomeHeader() {
           {/* User Profile */}
           <Link href="/interests">
             <Avatar className="h-10 w-10 border-2 border-white shadow-sm cursor-pointer">
-              <AvatarImage src="/avatars/01.png" alt="@ruslanandreiev" />
+              <AvatarImage src={USER_AVATAR} alt="@ruslanandreiev" />
               <AvatarFallback>RA</AvatarFallback>
             </Avatar>
           </Link>

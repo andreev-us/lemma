@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Sidebar } from "@/components/layout/sidebar";
 import { BottomNav } from "@/components/layout/bottom-nav";
-import { ThemeProvider } from "@/components/theme-provider";
+
 import { ActiveUnitProvider } from "@/context/active-unit-context";
 import "./globals.css";
 
@@ -27,28 +27,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ActiveUnitProvider>
-            <div className="flex min-h-screen bg-background relative">
-              <Sidebar />
-              <div className="flex-1 flex flex-col lg:pl-[18.5rem] pb-16 lg:pb-0">
-                <main className="flex-1">
-                  {children}
-                </main>
-              </div>
-              <BottomNav />
+        <ActiveUnitProvider>
+          <div className="flex min-h-screen bg-background relative">
+            <Sidebar />
+            <div className="flex-1 flex flex-col lg:pl-[18.5rem] pb-16 lg:pb-0">
+              <main className="flex-1">
+                {children}
+              </main>
             </div>
-          </ActiveUnitProvider>
-        </ThemeProvider>
+            <BottomNav />
+          </div>
+        </ActiveUnitProvider>
       </body>
     </html>
   );

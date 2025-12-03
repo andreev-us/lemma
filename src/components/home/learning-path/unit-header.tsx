@@ -1,5 +1,5 @@
 import { cn, UNIT_THEMES, UnitTheme } from "@/lib/utils"
-import { UnitIcon, UnitIconType } from "./unit-icons"
+import { UnitIcon, UnitIconType } from "@/components/icons"
 
 interface UnitHeaderProps {
   title: string
@@ -10,10 +10,10 @@ interface UnitHeaderProps {
   icon?: UnitIconType
 }
 
-export function UnitHeader({ 
-  title, 
-  description, 
-  label, 
+export function UnitHeader({
+  title,
+  description,
+  label,
   className,
   themeColor = "indigo",
   icon = "star"
@@ -21,13 +21,13 @@ export function UnitHeader({
   const theme = UNIT_THEMES[themeColor]
 
   return (
-    <div 
+    <div
       className={cn(
         "sticky top-[9.5rem] z-30 w-full mb-8 overflow-hidden",
         "backdrop-blur-md border-2 border-slate-200 rounded-3xl shadow-sm",
         className
       )}
-      style={{ 
+      style={{
         background: `linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, ${theme.primary}15 100%)`
       }}
     >
@@ -52,17 +52,17 @@ export function UnitHeader({
         </div>
 
         {/* Right Side: Visual Asset Placeholder */}
-        <div 
+        <div
           className={cn(
             "hidden sm:flex items-center justify-center w-20 h-20 flex-shrink-0 rounded-full shadow-sm border-2 border-white/50",
             "bg-white/50 backdrop-blur-md"
           )}
         >
-             <UnitIcon 
-               name={icon} 
-               variant={icon === 'book' ? 'outline' : 'filled'}
-               className={cn("w-8 h-8", theme.classes.text)} 
-             />
+          <UnitIcon
+            name={icon}
+            variant={icon === 'book' ? 'outline' : 'filled'}
+            className={cn("w-8 h-8", theme.classes.text)}
+          />
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Settings } from "lucide-react"
 import Link from "next/link"
 
+import { USER_AVATAR } from "@/lib/constants"
+
 export function MobileProfileHeader() {
   return (
     <div className="flex flex-col items-center space-y-4 mb-6 lg:hidden">
@@ -13,7 +15,7 @@ export function MobileProfileHeader() {
         <div className="w-10" /> {/* Spacer for centering */}
         <Link href="/interests">
           <Avatar className="h-20 w-20 border-2 border-border">
-            <AvatarImage src="/avatars/01.png" alt="@ruslanandreiev" />
+            <AvatarImage src={USER_AVATAR} alt="@ruslanandreiev" />
             <AvatarFallback className="text-lg">RA</AvatarFallback>
           </Avatar>
         </Link>
@@ -23,7 +25,7 @@ export function MobileProfileHeader() {
           </Link>
         </Button>
       </div>
-      
+
       <div className="text-center space-y-1">
         <h2 className="text-xl font-bold">Ruslan Andreiev</h2>
         <p className="text-sm text-muted-foreground">Intermediate Learner • B2</p>

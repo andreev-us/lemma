@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cn, UNIT_THEMES, UnitTheme } from "@/lib/utils"
-import { UnitIcon, UnitIconType } from "./unit-icons"
+import { UnitIcon, UnitIconType } from "@/components/icons"
 import {
   Tooltip,
   TooltipContent,
@@ -69,7 +69,7 @@ export const LessonNode = React.forwardRef<HTMLDivElement, LessonNodeProps>(({
           <div className={cn("absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45", theme.classes.bg)}></div>
         </div>
       )}
-      
+
       <TooltipProvider delayDuration={80}>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -80,7 +80,7 @@ export const LessonNode = React.forwardRef<HTMLDivElement, LessonNodeProps>(({
                 "relative flex items-center justify-center rounded-full transition-all duration-300 z-10",
                 // Base size
                 isCurrent ? "w-24 h-24" : "w-20 h-20",
-                
+
                 // Completed state - Gold/Success with soft glow
                 isCompleted && type !== 'milestone' && "bg-gradient-to-b from-yellow-400 to-yellow-500 border-b-[6px] border-yellow-600 text-white hover:scale-110 hover:-translate-y-1 active:border-b-0 active:translate-y-1",
                 isCompleted && type !== 'milestone' && "shadow-[0_4px_14px_0_rgba(234,179,8,0.39)]",
@@ -92,7 +92,7 @@ export const LessonNode = React.forwardRef<HTMLDivElement, LessonNodeProps>(({
                   theme.classes.borderDark,
                   theme.classes.shadow
                 ),
-                
+
                 // Current state - The Hero (Electric Blue) with enhanced glow
                 isCurrent && cn(
                   "bg-gradient-to-b border-b-[6px] text-white hover:scale-105 hover:-translate-y-0.5 active:border-b-0 active:translate-y-1",
@@ -101,20 +101,20 @@ export const LessonNode = React.forwardRef<HTMLDivElement, LessonNodeProps>(({
                   theme.classes.shadow,
                   "hover:shadow-lg" // Simplified hover shadow for now, or use custom
                 ),
-                
+
                 // Locked state - Visible but disabled
                 isLocked && "bg-slate-300 border-b-[6px] border-slate-400 text-white cursor-not-allowed shadow-sm",
-                
+
                 // Hover effects for non-locked
                 !isLocked && "cursor-pointer active:scale-95"
               )}
             >
               {/* Inner Icon */}
-              <UnitIcon 
-                name={iconType} 
-                className="w-10 h-10 drop-shadow-md fill-white" 
+              <UnitIcon
+                name={iconType}
+                className="w-10 h-10 drop-shadow-md fill-white"
               />
-              
+
               {/* Ripple effect for current node */}
               {isCurrent && (
                 <>
@@ -123,11 +123,11 @@ export const LessonNode = React.forwardRef<HTMLDivElement, LessonNodeProps>(({
               )}
             </button>
           </TooltipTrigger>
-          
+
           {/* Tooltip content - Only for non-current nodes now, or extra info */}
           {!isCurrent && (
-            <TooltipContent 
-              side="top" 
+            <TooltipContent
+              side="top"
               className={cn("font-bold px-4 py-2", theme.classes.bg, "text-white border-0")}
             >
               <div className="flex flex-col items-center gap-1">

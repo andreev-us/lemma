@@ -6,6 +6,8 @@ import { Settings } from "lucide-react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
 
+import { USER_AVATAR } from "@/lib/constants"
+
 export function TopBar() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background shadow-sm">
@@ -19,7 +21,7 @@ export function TopBar() {
           <div className="hidden md:flex items-center gap-2">
             <Link href="/interests">
               <Avatar>
-                <AvatarImage src="/avatars/01.png" alt="@ruslanandreiev" />
+                <AvatarImage src={USER_AVATAR} alt="@ruslanandreiev" />
                 <AvatarFallback>RA</AvatarFallback>
               </Avatar>
             </Link>
