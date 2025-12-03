@@ -124,10 +124,10 @@ const units: {
 export function LearningPath() {
   const { setActiveTheme } = useActiveUnit()
   // Constants for layout
-  const NODE_HEIGHT = 80
-  const NODE_MARGIN_BOTTOM = 48
+  const NODE_HEIGHT = 72
+  const NODE_MARGIN_BOTTOM = 43.2
   const VERTICAL_SPACING = NODE_HEIGHT + NODE_MARGIN_BOTTOM
-  const HORIZONTAL_OFFSET_STEP = 60
+  const HORIZONTAL_OFFSET_STEP = 54
   const CONTAINER_WIDTH = 320 // Increased width for better spacing
   const CENTER_X = CONTAINER_WIDTH / 2
 

@@ -41,9 +41,9 @@ export function DailyChallengeCard() {
         <div className="space-y-1.5">
           <div className="flex justify-between text-sm font-medium">
             <span className="text-slate-500">New Words</span>
-            <span className="text-amber-600">8/10</span>
+            <span className="text-[#2c7fff]">8/10</span>
           </div>
-          <Progress value={80} className="h-2.5 bg-amber-600/10 rounded-full" indicatorClassName="bg-gradient-to-r from-amber-600 to-orange-600 rounded-full" />
+          <Progress value={80} className="h-2.5 bg-[#2c7fff]/10 rounded-full" indicatorClassName="bg-gradient-to-r from-[#2c7fff] to-[#0066ff] rounded-full" />
         </div>
       </CardContent>
     </Card>

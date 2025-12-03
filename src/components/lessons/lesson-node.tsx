@@ -40,8 +40,8 @@ export const LessonNode = React.forwardRef<HTMLDivElement, LessonNodeProps>(({
   const theme = UNIT_THEMES[themeColor]
 
   // Calculate horizontal offset based on position (-1, 0, 1)
-  // We'll use a multiplier for the offset amount (e.g., 60px)
-  const horizontalOffset = position * 60
+  // We'll use a multiplier for the offset amount (e.g., 54px)
+  const horizontalOffset = position * 54
 
   return (
     <div
