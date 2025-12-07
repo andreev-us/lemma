@@ -3,20 +3,15 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Flame } from "lucide-react"
 import Link from "next/link"
-import { useActiveUnit } from "@/context/active-unit-context"
-import { UNIT_THEMES } from "@/lib/utils"
 
 import { USER_AVATAR } from "@/lib/constants"
 
 export function WelcomeHeader() {
-  const { activeTheme } = useActiveUnit()
-  const theme = UNIT_THEMES[activeTheme]
-
   return (
     <div
       className="sticky top-4 z-40 p-6 mb-8 rounded-3xl border-2 border-slate-200 shadow-sm transition-all duration-200 backdrop-blur-md"
       style={{
-        background: `linear-gradient(to bottom right, rgba(255,255,255,0.5) 0%, ${theme.primary}10 100%)`
+        background: `linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, rgba(59, 130, 246, 0.1) 100%)`
       }}
     >
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">

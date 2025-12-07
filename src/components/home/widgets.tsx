@@ -3,18 +3,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Trophy, Zap, BookOpen, ChevronRight } from "lucide-react"
-import { cn, UNIT_THEMES } from "@/lib/utils"
-import { useActiveUnit } from "@/context/active-unit-context"
+import { cn } from "@/lib/utils"
 
 export function DailyChallengeCard() {
-  const { activeTheme } = useActiveUnit()
-  const theme = UNIT_THEMES[activeTheme]
-
   return (
     <Card 
       className="border-2 border-slate-200 shadow-sm backdrop-blur-md rounded-3xl overflow-hidden gap-0"
       style={{ 
-        background: `linear-gradient(to bottom right, rgba(255,255,255,0.5) 0%, ${theme.primary}10 100%)`
+        background: `linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, rgba(59, 130, 246, 0.1) 100%)`
       }}
     >
       <CardHeader className="pb-3">
@@ -51,23 +47,20 @@ export function DailyChallengeCard() {
 }
 
 export function VocabularyReviewCard() {
-  const { activeTheme } = useActiveUnit()
-  const theme = UNIT_THEMES[activeTheme]
-
   return (
     <Card 
       className="border-2 border-slate-200 shadow-sm backdrop-blur-md rounded-3xl overflow-hidden group cursor-pointer transition-all"
       style={{ 
-        background: `linear-gradient(to bottom right, rgba(255,255,255,0.5) 0%, ${theme.primary}10 100%)`
+        background: `linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, rgba(59, 130, 246, 0.1) 100%)`
       }}
     >
       <CardContent className="p-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div 
             className="w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden transition-colors duration-300"
-            style={{ backgroundColor: `${theme.primary}26`, color: theme.primary }}
+            style={{ backgroundColor: `#3b82f626`, color: `#3b82f6` }}
           >
-            <div className="absolute inset-0" style={{ backgroundColor: `${theme.primary}1A` }} />
+            <div className="absolute inset-0" style={{ backgroundColor: `#3b82f61A` }} />
             <BookOpen className="w-6 h-6 relative z-10" />
           </div>
           <div>
@@ -81,7 +74,7 @@ export function VocabularyReviewCard() {
            />
            <style jsx>{`
              .group:hover .lucide-chevron-right {
-               color: ${theme.primary};
+               color: #3b82f6;
              }
            `}</style>
         </div>
@@ -91,9 +84,6 @@ export function VocabularyReviewCard() {
 }
 
 export function LeaderboardCard() {
-  const { activeTheme } = useActiveUnit()
-  const theme = UNIT_THEMES[activeTheme]
-
   const users = [
     { name: "Sarah", points: 1400, rank: 1, avatar: "👩" },
     { name: "You", points: 1380, rank: 2, avatar: "👤" },
@@ -105,7 +95,7 @@ export function LeaderboardCard() {
     <Card 
       className="border-2 border-slate-200 shadow-sm backdrop-blur-md rounded-3xl overflow-hidden gap-0"
       style={{ 
-        background: `linear-gradient(to bottom right, rgba(255,255,255,0.5) 0%, ${theme.primary}10 100%)`
+        background: `linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, rgba(59, 130, 246, 0.1) 100%)`
       }}
     >
       <CardHeader className="pb-3">
@@ -124,8 +114,8 @@ export function LeaderboardCard() {
             <div
               key={user.name}
               style={isCurrentUser ? {
-                backgroundColor: `${theme.primary}26`,
-                borderColor: `${theme.primary}4D`,
+                backgroundColor: `#3b82f626`,
+                borderColor: `#3b82f64D`,
               } : undefined}
               className={cn(
                 "flex items-center justify-between py-2 px-4 rounded-2xl transition-colors border-2",
@@ -148,7 +138,7 @@ export function LeaderboardCard() {
                 <span className="text-lg">{user.avatar}</span>
                 <span 
                   className={cn("text-sm font-medium", isCurrentUser ? "font-bold" : "text-slate-700")}
-                  style={isCurrentUser ? { color: theme.primary } : undefined}
+                  style={isCurrentUser ? { color: `#3b82f6` } : undefined}
                 >
                   {user.name}
                 </span>
